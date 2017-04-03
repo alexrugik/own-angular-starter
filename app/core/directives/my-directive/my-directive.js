@@ -5,16 +5,18 @@ module.exports = 'app.core.directives.myDirective';
 angular.module('app.core.directives.myDirective', [])
     .directive('ravMyDirective', MyDirective);
 
-MyDirective.$inject = [];
+MyDirective.$inject = ['$window'];
 
-function MyDirective() {
+function MyDirective($window) {
   return {
     templateUrl: 'app/core/directives/my-directive/my-directive.template.html',
     restrict: 'E',
     scope: {
-      customerInfo: '=info'
+      info: '='
     },
-    link: function (scope, element, attrs, controller, transcludeFn) {
+    link: function (scope, element, attrs, controller) {
+        console.log('link');
+        console.log($window);
     }
   }
 }
