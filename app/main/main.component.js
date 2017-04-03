@@ -1,28 +1,18 @@
-module.exports = 'app.main';
+class MainController {
+    constructor() {
+    }
 
-angular
-    .module('app.main', [])
-    .component('main', {
-      templateUrl: "app/main/main.template.html",
-      controller: MainController,
-      controllerAs: '$ctrl'
-    });
+    $onInit() {
 
-MainController.$inject = ['$state', '$rootScope', '$timeout', '$interval', 'User', '$http'];
-
-function MainController($state, $rootScope, $timeout, $interval, User, $http) {
-  var $ctrl = this;
-
-  $ctrl.$onInit = init;
-  $ctrl.$onDestroy = destroy;
-
-  $ctrl.alex = User.$find(0);
-
-
-  function init() {
-  }
-
-  function destroy() {
-  }
-
+    }
 }
+
+MainController.$inject = ['$timeout'];
+
+export default angular.module('app.main', [])
+    .component('main', {
+        templateUrl: "app/main/main.template.html",
+        controller: MainController,
+        controllerAs: '$ctrl'
+    })
+    .name;
