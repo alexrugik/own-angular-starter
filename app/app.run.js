@@ -3,7 +3,7 @@
 module.exports = 'app.run';
 
 angular.module('app.run', [])
-    .run(Run)
+    .run(Run);
 
 Run.$inject = ['$rootScope'];
 

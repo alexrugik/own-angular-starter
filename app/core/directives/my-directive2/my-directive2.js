@@ -12,8 +12,7 @@ function MyDirective2() {
     templateUrl: 'app/core/directives/my-directive2/my-directive2.template.html',
     restrict: 'E',
     scope: {},
-    transclude: true,
-    link: function (scope, element, attrs, controller, transcludeFn) {
+    link: function (scope, element, attrs, controller) {
     }
   }
 }
