@@ -1,2 +1,44 @@
 <div>Create Order</div>
-
+<div class="container">
+    <div class="row">
+        <div>
+            <form novalidate id="create-order" class="order-form">
+                <div class="form-group">
+                    <label for="manager-name">Manager Name</label>
+                    <input id="manager-name"
+                           type="text"
+                           class="form-control"
+                           aria-describedby="manager name"
+                           placeholder="type manager name">
+                    <small id="emailHelp"
+                           class="form-text
+                           text-muted">We'll never share your email with anyone else.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="order-type">Order Type</label>
+                    <select
+                            class="form-control"
+                            id="order-type">
+                        <option>Opt</option>
+                        <option>Diff</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleSelect1">Example select</label>
+                    <select class="form-control" id="exampleSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
