@@ -18,7 +18,19 @@ export const MANAGERS = [
 ];
 
 
-export const ORDER_TYPES ={
+export const ORDER_TYPES = {
     WHOLESALE: 'wholesale',
     RETAIL: 'retail'
+};
+
+export const DATE_PICKER_STATE = {
+    date: new Date(),
+    format: 'dd-MMMM-yyyy',
+    isOpened: false,
+    options: {
+        minDate: new Date()
+    },
+    open() {
+        this.isOpened = true;
+    }
 };

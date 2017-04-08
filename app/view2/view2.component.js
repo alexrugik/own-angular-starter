@@ -1,7 +1,9 @@
 import Order from './order.model';
+
 import {
     MANAGERS,
-    ORDER_TYPES
+    ORDER_TYPES,
+    DATE_PICKER_STATE
 } from './order.model.const';
 
 class createOrderController {
@@ -9,6 +11,7 @@ class createOrderController {
         window.order = this;
         this.MANAGERS = angular.copy(MANAGERS);
         this.ORDER_TYPES = angular.copy(ORDER_TYPES);
+        this.datePickerState = angular.copy(DATE_PICKER_STATE);
     }
 
     $onInit() {

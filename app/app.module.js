@@ -6,7 +6,9 @@ import View2Component from  './view2/view2.component';
 angular.module('app', [
     'ngMockE2E',
     'ui.router',
+    'ngAnimate',
     'ngResource',
+    'ui.bootstrap',
     require('./app.config'),
     require('./app.route'),
     require('./app.run'),

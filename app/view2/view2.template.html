@@ -28,14 +28,22 @@
                     <input type="text" class="form-control" id="provider" placeholder="customer">
                 </div>
                 <div class="form-group">
-                    <label for="exampleSelect1">Example select</label>
-                    <select class="form-control" id="exampleSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                    <label>Popup</label>
+                    <div class="form-group">
+                        <p class="input-group">
+                            <input type="text" class="form-control"
+                                   uib-datepicker-popup="{{$ctrl.datePickerState.format}}"
+                                   ng-model="$ctrl.datePickerState.date" is-open="$ctrl.datePickerState.isOpened"
+                                   datepicker-options="$ctrl.datePickerState.options"
+                                   ng-required="true"
+                                   close-text="Close"
+                                   alt-input-formats="altInputFormats"
+                            />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="$ctrl.datePickerState.open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
                 </div>
             </form>
         </div>

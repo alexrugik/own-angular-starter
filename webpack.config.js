@@ -4,12 +4,13 @@ var dependency = [
     'angular',
     'angular-ui-router',
     'angular-resource',
-    'angular-restmod',
     'angular-mocks',
+    'angular-animate',
     'httpbackend',
     'jquery',
     'lodash',
-    'bootstrap'
+    'bootstrap',
+    'angular-bootstrap',
 ];
 
 var path = require('path');
@@ -49,6 +50,10 @@ module.exports = {
                     limit: 10000,
                     name: 'fonts/[name].[ext]'
                 }
+            },
+            {
+                test: /\.json$/,
+                loader: 'json-loader'
             }
         ]
     },
