@@ -8,11 +8,8 @@
                             class="form-control"
                             id="manager"
                             ng-model="$ctrl.formData.manager"
+                            ng-options="orderTypeValue for (orderTypeKey, orderTypeValue) in $ctrl.ORDER_TYPES">
                             required="true">
-                        <option ng-repeat="manager in $ctrl.MANAGERS"
-                                ng-bind="manager.fullName()"
-                                ng-value="manager">
-                        </option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -21,11 +18,8 @@
                             class="form-control"
                             id="order-type"
                             ng-model="$ctrl.formData.orderType"
+                            ng-options="orderTypeValue for (orderTypeKey, orderTypeValue) in $ctrl.ORDER_TYPES"
                             required="true">
-                        <option ng-repeat="(orderTypeKey, orderTypeValue) in $ctrl.ORDER_TYPES"
-                                ng-bind="orderTypeValue"
-                                ng-value="orderTypeValue">
-                        </option>
                     </select>
                 </div>
                 <div class="form-group"

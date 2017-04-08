@@ -4,8 +4,11 @@
     color: #a94442;
 }
 
+.has-error {
+    color: #a94442;
+}
 
-/* Color of valid field */
+    /* Color of valid field */
 .has-success .control-label,
 .has-success .help-block,
 .has-success .form-control-feedback {

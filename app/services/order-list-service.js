@@ -1,4 +1,5 @@
 import OrderModel from '../models/order.model';
+import ManagerModel from '../models/manager.model';
 
 export default class OrderListService {
     constructor($http) {
@@ -46,6 +47,8 @@ export default class OrderListService {
                 const orders = [];
                 result.data.forEach(order => {
                     order.dateOfExecution = new Date(order.dateOfExecution);
+                    order.dateOfCreation = new Date(order.dateOfCreation);
+                    order.manager = Object.assign(new ManagerModel(), order.manager);
                     orders.push(Object.assign(new OrderModel(), order));
                 });
                 this.addListToOrderList(orders);
