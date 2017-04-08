@@ -4,9 +4,9 @@
             <a class="navbar-brand" href="#">Angular starter by Alex</a>
         </div>
         <ul class="nav navbar-nav">
-            <li ng-class="$ctrl.isActive('main')"><a ng-href="main">Home</a></li>
-            <li ng-class="$ctrl.isActive('view1')"><a ng-href="view1">View 1</a></li>
-            <li ng-class="$ctrl.isActive('view2')"><a ng-href="view2">View 2</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.main">Home</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.order-list">Order list</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.create-order">Create order</a></li>
         </ul>
     </div>
 </nav>

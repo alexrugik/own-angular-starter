@@ -7,8 +7,9 @@ import {
 } from './order.model.const';
 
 class createOrderController {
-    constructor(orderListService) {
-        window.order = this;
+    constructor($state,
+                orderListService) {
+        this.$state = $state;
         this.orderListService = orderListService;
     }
 
@@ -24,15 +25,18 @@ class createOrderController {
         this.order.dateOfExecution = this.datePickerState.dateOfExecution;
         this.order.createIdentifier(this.orderListService.getOrderList());
         this.orderListService.addOrder(this.order);
+        this.$state.go('app.order-list');
     }
-
 }
 
-createOrderController.$inject = ['orderListService'];
+createOrderController.$inject = [
+    '$state',
+    'orderListService'
+];
 
 export default angular.module('app.view2', [])
-    .component('view2', {
-        templateUrl: 'app/view2/view2.template.html',
+    .component('createOrder', {
+        templateUrl: 'app/create-order/create-order.template.html',
         controller: createOrderController,
         controllerAs: '$ctrl'
     })

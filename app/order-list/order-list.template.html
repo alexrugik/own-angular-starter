@@ -24,7 +24,7 @@
             <td ng-bind="order.dateOfExecution.toDateString()"></td>
             <td ng-show="$ctrl.isEditable(order)">
                 <span>in progress</span>
-                <span class="glyphicon glyphicon-pencil"
+                <span ng-show="!$ctrl.hideAnotherEdit" class="glyphicon glyphicon-pencil"
                       aria-hidden="true"
                       ng-click="$ctrl.toggleEdit(order)">
                     </span>
@@ -40,7 +40,7 @@
                             class="form-control"
                             id="order-type"
                             ng-model="order.orderType"
-                            ng-options="orderTypeValue for (orderTypeKey, orderTypeValue) in $ctrl.ORDER_TYPES">
+                            ng-options="orderTypeValue for (orderTypeKey, orderTypeValue) in $ctrl.ORDER_TYPES track by $index">
                     </select>
                 </td>
                 <td>
@@ -48,7 +48,7 @@
                             class="form-control"
                             id="manager"
                             ng-model="order.manager"
-                            ng-options="manager.fullName() for manager in $ctrl.MANAGERS">
+                            ng-options="manager.fullName() for manager in $ctrl.MANAGERS track by $index">
                     </select>
                 </td>
                 <td>
@@ -70,6 +70,7 @@
                 </td>
                 <td ng-bind="order.dateOfExecution.toDateString()"></td>
                 <td>
+                    <span>save changes</span>
                     <span class="glyphicon glyphicon-ok"
                           aria-hidden="true"
                           ng-click="$ctrl.toggleEdit(order)">

@@ -8,7 +8,7 @@
                             class="form-control"
                             id="manager"
                             ng-model="$ctrl.formData.manager"
-                            ng-options="orderTypeValue for (orderTypeKey, orderTypeValue) in $ctrl.ORDER_TYPES">
+                            ng-options="manager.fullName() for manager in $ctrl.MANAGERS">
                             required="true">
                     </select>
                 </div>
@@ -54,7 +54,7 @@
                            class="form-control"
                            id="provider"
                            name="provider"
-                           placeholder="customer"
+                           placeholder="provider"
                            ng-model="$ctrl.formData.provider"
                            ng-minlength="2"
                            ng-maxlength="15"

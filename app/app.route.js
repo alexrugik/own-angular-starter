@@ -17,20 +17,17 @@ function Route($stateProvider) {
           '': { template: '<div ui-view></div>' }
         }
       })
-      .state('main', {
+      .state('app.main', {
         url: '/main',
-        parent: 'app',
         template: '<main></main>'
       })
-      .state('view1', {
-        url: '/view1',
-        parent: 'app',
-        template: '<view1></view1>'
+      .state('app.order-list', {
+        url: '/order-list',
+        template: '<order-list></order-list>'
       })
-      .state('view2', {
-        url: '/view2',
-        parent: 'app',
-        template: '<view2></view2>'
+      .state('app.create-order', {
+        url: '/create-order',
+        template: '<create-order></create-order>'
       })
 }
 
