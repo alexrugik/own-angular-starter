@@ -7,19 +7,28 @@ import {
 } from './order.model.const';
 
 class createOrderController {
-    constructor() {
+    constructor(orderListService) {
         window.order = this;
+        this.orderListService = orderListService;
+    }
+
+    $onInit() {
         this.MANAGERS = angular.copy(MANAGERS);
         this.ORDER_TYPES = angular.copy(ORDER_TYPES);
         this.datePickerState = angular.copy(DATE_PICKER_STATE);
     }
 
-    $onInit() {
-
+    saveOrder() {
+        this.order = new Order();
+        Object.assign(this.order, this.formData);
+        this.order.dateOfExecution = this.datePickerState.dateOfExecution;
+        this.order.createIdentifier(this.orderListService.getOrderList());
+        this.orderListService.addOrder(this.order);
     }
+
 }
 
-createOrderController.$inject = [];
+createOrderController.$inject = ['orderListService'];
 
 export default angular.module('app.view2', [])
     .component('view2', {

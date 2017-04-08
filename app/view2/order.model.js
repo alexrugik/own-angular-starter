@@ -3,7 +3,7 @@ let id = 1;
 export default class {
     constructor() {
         this.__id = id++;
-        this.identifier  = '';
+        this.identifier = '';
         this.dateOfCreation = new Date();
         this.__dateOfExecution = '';
         this.__orderType = '';
@@ -36,7 +36,6 @@ export default class {
             return;
         }
         this.__provider = provider;
-
     }
 
     get manager() {
@@ -72,7 +71,18 @@ export default class {
         this.__dateOfExecution = dateOfExecution;
     }
 
-    createIdentifier() {
+    createIdentifier(orders) {
+        const orderTypePartOfIdentifier = this.orderType.substring(0, 1).toUpperCase();
+        const yearPartOfIdentifier = this.dateOfCreation.getFullYear().toString().substring(2, 4);
+        const monthPartOfIdentifier = this.dateOfCreation.getMonth();
 
+        const ordersWithTheSameMonthAndYear = orders.filter(order => {
+            return order.dateOfCreation.getMonth() === monthPartOfIdentifier
+                && order.dateOfCreation.getYear() === this.dateOfCreation.getYear();
+        });
+        const orderInMonthPartOfIdentifier = ordersWithTheSameMonthAndYear.length + 1;
+
+        this.identifier = `${orderTypePartOfIdentifier}-${yearPartOfIdentifier}${monthPartOfIdentifier}${orderInMonthPartOfIdentifier}`;
+        return this;
     }
 }

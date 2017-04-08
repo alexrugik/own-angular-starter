@@ -24,7 +24,7 @@ export const ORDER_TYPES = {
 };
 
 export const DATE_PICKER_STATE = {
-    date: new Date(),
+    dateOfExecution: new Date(),
     format: 'dd-MMMM-yyyy',
     isOpened: false,
     options: {

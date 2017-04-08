@@ -80,12 +80,12 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Popup</label>
+                    <label>date Of Execution</label>
                     <div class="form-group">
                         <p class="input-group">
                             <input type="text" class="form-control"
                                    uib-datepicker-popup="{{$ctrl.datePickerState.format}}"
-                                   ng-model="$ctrl.datePickerState.date" is-open="$ctrl.datePickerState.isOpened"
+                                   ng-model="$ctrl.datePickerState.dateOfExecution" is-open="$ctrl.datePickerState.isOpened"
                                    datepicker-options="$ctrl.datePickerState.options"
                                    ng-required="true"
                                    close-text="Close"
@@ -98,6 +98,10 @@
                         </p>
                     </div>
                 </div>
+                <button ng-disabled="$ctrl.orderForm.$invalid"
+                        type="button"
+                        ng-click="$ctrl.saveOrder()"
+                        class="btn btn-primary">Save Order</button>
             </form>
         </div>
     </div>
