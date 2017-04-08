@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Order list</h2>
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>Order id</th>
+            <th>Order identifier</th>
+            <th>Order type</th>
+            <th>Order manager</th>
+            <th>Order customer</th>
+            <th>Order provider</th>
+            <th>Order date of Execution</th>
+        </tr>
+        </thead>
+        <tbody ng-repeat="order in $ctrl.orderListService.getOrderList() track by order.id">
+        <tr>
+            <td ng-bind="order.id"></td>
+            <td ng-bind="order.identifier"></td>
+            <td ng-bind="order.orderType"></td>
+            <td ng-bind="order.manager.fullName()"></td>
+            <td ng-bind="order.customer"></td>
+            <td ng-bind="order.provider"></td>
+            <td ng-bind="order.dateOfExecution.toDateString()"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

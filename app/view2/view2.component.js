@@ -1,4 +1,4 @@
-import Order from './order.model';
+import OrderModel from '../models/order.model';
 
 import {
     MANAGERS,
@@ -19,7 +19,7 @@ class createOrderController {
     }
 
     saveOrder() {
-        this.order = new Order();
+        this.order = new OrderModel();
         Object.assign(this.order, this.formData);
         this.order.dateOfExecution = this.datePickerState.dateOfExecution;
         this.order.createIdentifier(this.orderListService.getOrderList());

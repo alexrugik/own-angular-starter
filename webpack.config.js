@@ -69,7 +69,12 @@ module.exports = {
                     context: __dirname,
                     from: 'index.html',
                     to: __dirname + '/web/'
-                }
+                },
+                {
+                    context: __dirname + '/app/',
+                    from: '**/*.json',
+                    to: __dirname + '/web/app/'
+                },
             ],
             {
                 copyUnmodified: true

@@ -1,0 +1,47 @@
+[
+  {
+    "dateOfCreation": "2017-04-08T09:20:08.035Z",
+    "dateOfExecution": "2017-04-22T09:20:00.691Z",
+    "orderType": "wholesale",
+    "customer": "IBM",
+    "provider": "alex company",
+    "manager": {
+      "firstName": "Alex",
+      "secondName": "Ruzhinskiy",
+      "age": 29,
+      "$$hashKey": "object:12"
+    },
+    "identifier": "W-1731",
+    "$$hashKey": "object:130"
+  },
+  {
+    "dateOfCreation": "2017-04-08T09:20:08.035Z",
+    "dateOfExecution": "2017-04-22T09:20:00.691Z",
+    "orderType": "wholesale",
+    "customer": "Apple",
+    "provider": "AlexInt",
+    "manager": {
+      "firstName": "Alex",
+      "secondName": "Ruzhinskiy",
+      "age": 29,
+      "$$hashKey": "object:12"
+    },
+    "identifier": "W-1731",
+    "$$hashKey": "object:130"
+  },
+  {
+    "dateOfCreation": "2017-04-08T09:20:08.035Z",
+    "dateOfExecution": "2017-04-22T09:20:00.691Z",
+    "orderType": "wholesale",
+    "customer": "SAMSUNG",
+    "provider": "Alex empire",
+    "manager": {
+      "firstName": "Alex",
+      "secondName": "Ruzhinskiy",
+      "age": 29,
+      "$$hashKey": "object:12"
+    },
+    "identifier": "W-1731",
+    "$$hashKey": "object:130"
+  }
+]

@@ -3,13 +3,13 @@ let id = 1;
 export default class {
     constructor() {
         this.__id = id++;
-        this.identifier = '';
         this.dateOfCreation = new Date();
         this.__dateOfExecution = '';
         this.__orderType = '';
         this.__customer = '';
         this.__provider = '';
-        this.__manager = '';
+        this.__manager = {};
+        this.identifier = '';
     }
 
     get id() {
@@ -70,6 +70,7 @@ export default class {
         }
         this.__dateOfExecution = dateOfExecution;
     }
+
 
     createIdentifier(orders) {
         const orderTypePartOfIdentifier = this.orderType.substring(0, 1).toUpperCase();

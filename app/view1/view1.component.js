@@ -1,6 +1,6 @@
 class View1Controller {
-    constructor() {
-
+    constructor(orderListService) {
+        this.orderListService = orderListService;
     }
 
     $onInit() {
@@ -8,7 +8,9 @@ class View1Controller {
     }
 }
 
-View1Controller.$inject = [];
+View1Controller.$inject = [
+    'orderListService'
+];
 
 export default angular.module('app.view1', [])
     .component('view1', {

@@ -1,6 +1,10 @@
+import OrderModel from '../models/order.model';
+
 export default class OrderListService {
-    constructor() {
+    constructor($http) {
+        this.$http = $http;
         this.__orderList = [];
+        this.getDefaultOrderList();
     }
 
     getOrderList() {
@@ -19,7 +23,7 @@ export default class OrderListService {
         if (!order) {
             throw  new Error('delete order no order!');
         }
-        const index = this.__orderList.find(item => Object.is(item.id, order.id));
+        const index = this.__orderList.findIndex(item => Object.is(item.id, order.id));
         if (index === -1) {
             return;
         }
@@ -28,10 +32,25 @@ export default class OrderListService {
     }
 
     addListToOrderList(orderList) {
-        if(!orderList.map) {
+        if (!orderList.map) {
             throw new Error('add list is not array!')
         }
         this.__orderList.push(...orderList);
         return this;
     }
+
+    getDefaultOrderList() {
+        const defaultOrderModelsUrl = 'app/json/order-default-models.json';
+        this.$http.get(defaultOrderModelsUrl)
+            .then(result => {
+                const orders = [];
+                result.data.forEach(order => {
+                    order.dateOfExecution = new Date(order.dateOfExecution);
+                    orders.push(Object.assign(new OrderModel(), order));
+                });
+                this.addListToOrderList(orders);
+            })
+    }
 }
+
+OrderListService.$inject = ['$http'];
